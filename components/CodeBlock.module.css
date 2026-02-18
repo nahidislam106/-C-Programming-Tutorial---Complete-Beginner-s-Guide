@@ -1,0 +1,112 @@
+.codeBlock {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1f2937;
+  border: 1px solid #374151;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #111827;
+  border-bottom: 1px solid #374151;
+}
+
+.language {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.copyButton:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+}
+
+.copyButton.copied {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.icon {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.codeBlock pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: #1f2937;
+  color: #f9fafb;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+}
+
+.codeBlock code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Scrollbar styling */
+.codeBlock pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.codeBlock pre::-webkit-scrollbar-track {
+  background: #111827;
+  border-radius: 0 0 8px 8px;
+}
+
+.codeBlock pre::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.codeBlock pre::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .codeBlock pre {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .copyButton {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .language {
+    font-size: 0.7rem;
+  }
+}

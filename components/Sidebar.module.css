@@ -1,0 +1,127 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 52px;
+  width: 220px;
+  height: calc(100vh - 52px);
+  background: white;
+  border-right: 2px solid var(--border);
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 999;
+  box-shadow: var(--shadow);
+}
+
+.sidebar.collapsed {
+  transform: translateX(-220px);
+}
+
+.sidebarHeader {
+  padding: 1rem;
+  background: var(--light);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.sidebarHeader h2 {
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.navMenu {
+  padding: 0;
+  list-style: none;
+}
+
+.navMenu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--dark);
+  text-decoration: none;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+  font-size: 0.85rem;
+}
+
+.navMenu a:hover {
+  background: var(--light);
+  border-left-color: var(--primary);
+  padding-left: 1.25rem;
+}
+
+.navMenu a.active {
+  background: linear-gradient(to right, #eff6ff, transparent);
+  border-left-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.navSectionTitle {
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  list-style: none;
+}
+
+.sidebarToggle {
+  position: fixed;
+  left: 220px;
+  top: 60px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  z-index: 998;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.sidebarToggle:hover {
+  background: var(--primary-dark);
+}
+
+.sidebarToggle.collapsed {
+  left: 0;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 52px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 52px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.overlay.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-220px);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebarToggle {
+    display: none;
+  }
+}

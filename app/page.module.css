@@ -1,0 +1,18 @@
+.container {
+  margin-left: 220px;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  max-width: 1400px;
+  min-height: calc(100vh - 200px);
+}
+
+.container.expanded {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
